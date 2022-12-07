@@ -76,7 +76,7 @@ async def generate_article(theme = None):
             themes = themes.replace('\n\n', '\n').split('\n')
             theme = random.choice(themes).strip()
 
-        content = await gpt3(f'Faça um artigo de caráter técnico, criativo e descontraído, com conteúdo verdadeiro e de valor, com introdução e bem formatado em markdown (sem o título h1) relacionado ao tema: "{theme}". Lembre-se de usar h2 caso haja um subtítulo, emojis e também código, links e exemplos, caso isso seja necessário no artigo. O artigo é voltado para um forum de programação chamado: TabNews, lembre-se de os cumprimentar na introdução do artigo (de forma criativa)!\n', tokens=3800, temperature=0.7)
+        content = await gpt3(f'Faça um artigo de caráter técnico, criativo e descontraído, com conteúdo verdadeiro e de valor, com introdução e bem formatado em markdown (sem o título h1) relacionado ao tema: "{theme}". Lembre-se de usar h2 caso haja um subtítulo, emojis e também código, links e exemplos, caso isso seja necessário no artigo. O artigo é voltado para uma comunidade de programação e tecnologia chamado de: TabNews, lembre-se de os cumprimentar carinhosamente na introdução do artigo!\n', tokens=3800, temperature=0.7)
         if content is not None:
             content = content.replace(theme, '').strip()
 
